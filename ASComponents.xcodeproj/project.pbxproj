@@ -10,6 +10,14 @@
 		C32C034E226563D40084F28E /* ASComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32C0344226563D40084F28E /* ASComponents.framework */; };
 		C32C0353226563D40084F28E /* ASComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C0352226563D40084F28E /* ASComponentsTests.swift */; };
 		C32C0355226563D40084F28E /* ASComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = C32C0347226563D40084F28E /* ASComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C32C03612265641E0084F28E /* ASProgressViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C03602265641E0084F28E /* ASProgressViewNode.swift */; };
+		C32C036A2265666F0084F28E /* SWKQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C03692265666F0084F28E /* SWKQueue.swift */; };
+		C32C036C226566B30084F28E /* ASSwitchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C036B226566B30084F28E /* ASSwitchNode.swift */; };
+		C32C036E226566E60084F28E /* LottieAnimationViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C036D226566E60084F28E /* LottieAnimationViewNode.swift */; };
+		C32C0370226569780084F28E /* ASDisplayNode2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C036F226569780084F28E /* ASDisplayNode2.swift */; };
+		C32C0372226569AD0084F28E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C0371226569AD0084F28E /* Globals.swift */; };
+		C32C037422656BF50084F28E /* ASCellNode2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C037322656BF50084F28E /* ASCellNode2.swift */; };
+		C3EA41C02265853D000D62D7 /* ASActivityIndicatorViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EA41BF2265853D000D62D7 /* ASActivityIndicatorViewNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,14 @@
 		C32C034D226563D40084F28E /* ASComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32C0352226563D40084F28E /* ASComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASComponentsTests.swift; sourceTree = "<group>"; };
 		C32C0354226563D40084F28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C32C03602265641E0084F28E /* ASProgressViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASProgressViewNode.swift; sourceTree = "<group>"; };
+		C32C03692265666F0084F28E /* SWKQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWKQueue.swift; sourceTree = "<group>"; };
+		C32C036B226566B30084F28E /* ASSwitchNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASSwitchNode.swift; sourceTree = "<group>"; };
+		C32C036D226566E60084F28E /* LottieAnimationViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieAnimationViewNode.swift; sourceTree = "<group>"; };
+		C32C036F226569780084F28E /* ASDisplayNode2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASDisplayNode2.swift; sourceTree = "<group>"; };
+		C32C0371226569AD0084F28E /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		C32C037322656BF50084F28E /* ASCellNode2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASCellNode2.swift; sourceTree = "<group>"; };
+		C3EA41BF2265853D000D62D7 /* ASActivityIndicatorViewNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASActivityIndicatorViewNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +87,12 @@
 		C32C0346226563D40084F28E /* ASComponents */ = {
 			isa = PBXGroup;
 			children = (
+				C32C03682265664D0084F28E /* Helper */,
+				C32C035F226563FE0084F28E /* Lottie */,
+				C32C035E226563F80084F28E /* UIKit */,
 				C32C0347226563D40084F28E /* ASComponents.h */,
 				C32C0348226563D40084F28E /* Info.plist */,
+				C32C0371226569AD0084F28E /* Globals.swift */,
 			);
 			path = ASComponents;
 			sourceTree = "<group>";
@@ -84,6 +104,34 @@
 				C32C0354226563D40084F28E /* Info.plist */,
 			);
 			path = ASComponentsTests;
+			sourceTree = "<group>";
+		};
+		C32C035E226563F80084F28E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C32C036B226566B30084F28E /* ASSwitchNode.swift */,
+				C32C03602265641E0084F28E /* ASProgressViewNode.swift */,
+				C3EA41BF2265853D000D62D7 /* ASActivityIndicatorViewNode.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C32C035F226563FE0084F28E /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				C32C036D226566E60084F28E /* LottieAnimationViewNode.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		C32C03682265664D0084F28E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C32C03692265666F0084F28E /* SWKQueue.swift */,
+				C32C037322656BF50084F28E /* ASCellNode2.swift */,
+				C32C036F226569780084F28E /* ASDisplayNode2.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +242,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C32C03612265641E0084F28E /* ASProgressViewNode.swift in Sources */,
+				C3EA41C02265853D000D62D7 /* ASActivityIndicatorViewNode.swift in Sources */,
+				C32C036A2265666F0084F28E /* SWKQueue.swift in Sources */,
+				C32C037422656BF50084F28E /* ASCellNode2.swift in Sources */,
+				C32C0372226569AD0084F28E /* Globals.swift in Sources */,
+				C32C036E226566E60084F28E /* LottieAnimationViewNode.swift in Sources */,
+				C32C0370226569780084F28E /* ASDisplayNode2.swift in Sources */,
+				C32C036C226566B30084F28E /* ASSwitchNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +310,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -268,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -318,6 +375,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -326,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -391,6 +449,7 @@
 		C32C035C226563D40084F28E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UWEQWNUAW;
 				INFOPLIST_FILE = ASComponentsTests/Info.plist;
@@ -409,6 +468,7 @@
 		C32C035D226563D40084F28E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UWEQWNUAW;
 				INFOPLIST_FILE = ASComponentsTests/Info.plist;
