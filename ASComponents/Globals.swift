@@ -8,9 +8,9 @@
 
 import UIKit
 
-public let DeviceColorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()
-public let ScreenDeviceScale:CGFloat = UIScreen.main.scale
-public let UIScreenPixel:CGFloat = 1.0 / ScreenDeviceScale
+internal let DeviceColorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()
+internal let ScreenDeviceScale:CGFloat = UIScreen.main.scale
+internal let UIScreenPixel:CGFloat = 1.0 / ScreenDeviceScale
 
 
 

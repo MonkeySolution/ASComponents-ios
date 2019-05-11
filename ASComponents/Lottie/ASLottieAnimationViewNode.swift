@@ -10,20 +10,25 @@ import UIKit
 import AsyncDisplayKit
 import Lottie
 
-public final class LottieAnimationViewNode: ASDisplayNode {
-    var lottieAnimationView: AnimationView { return view as! AnimationView }
+public final class ASLottieAnimationViewNode: ASDisplayNode {
+    public var lottieAnimationView: AnimationView { return view as! AnimationView }
     
-    public init( lottieAnimFile:String = "activityIndicator_drop") {
+    
+    public init( named:String, bundle:Bundle? = nil ) {
         super.init()
         setViewBlock { () -> UIView in
-            return AnimationView(name: lottieAnimFile, bundle: Bundle(for: LottieAnimationViewNode.self))
+            if let m_bundle = bundle {
+                return AnimationView(name: named, bundle: m_bundle)
+            }else{
+                return AnimationView(name: named)
+            }
         }
         self.contentMode = .scaleAspectFit
-        self.backgroundBehavior = .pauseAndRestore
+        //self.backgroundBehavior = .pauseAndRestore
         self.loopMode = .loop
     }
     
-    
+    /*
     public override func didEnterVisibleState() {
         super.didEnterVisibleState()
         SWKQueue.mainQueue().async { [weak self] in
@@ -39,6 +44,46 @@ public final class LottieAnimationViewNode: ASDisplayNode {
             strongSelf.lottieAnimationView.stop()
         }
         
+    }
+    */
+    
+    public var currentTime:TimeInterval {
+        get{
+            assert(Thread.isMainThread, "This method must be called on MainThread only")
+            return self.lottieAnimationView.currentTime
+        }
+        set{
+            SWKQueue.mainQueue().async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.lottieAnimationView.currentTime = newValue
+            }
+        }
+    }
+    
+    public var currentFrame:AnimationFrameTime {
+        get{
+            assert(Thread.isMainThread, "This method must be called on MainThread only")
+            return self.lottieAnimationView.currentFrame
+        }
+        set{
+            SWKQueue.mainQueue().async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.lottieAnimationView.currentFrame = newValue
+            }
+        }
+    }
+    
+    public var currentProgress:AnimationProgressTime {
+        get{
+            assert(Thread.isMainThread, "This method must be called on MainThread only")
+            return self.lottieAnimationView.currentProgress
+        }
+        set{
+            SWKQueue.mainQueue().async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.lottieAnimationView.currentProgress = newValue
+            }
+        }
     }
  
     public var backgroundBehavior:LottieBackgroundBehavior {
@@ -95,6 +140,12 @@ public final class LottieAnimationViewNode: ASDisplayNode {
     public func play(){
         SWKQueue.mainQueue().async {
             self.lottieAnimationView.play()
+        }
+    }
+    
+    public func stop(){
+        SWKQueue.mainQueue().async {
+            self.lottieAnimationView.stop()
         }
     }
 }

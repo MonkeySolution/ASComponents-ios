@@ -7,17 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C328BB52227CE1C900C33BBF /* CallKitActionKeyButtonViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328BB51227CE1C900C33BBF /* CallKitActionKeyButtonViewNode.swift */; };
+		C328BB54227D3A9C00C33BBF /* CallKitRecordButtonViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328BB53227D3A9C00C33BBF /* CallKitRecordButtonViewNode.swift */; };
+		C328BB56227D40BC00C33BBF /* call_kit_record_btn_selected.json in Resources */ = {isa = PBXBuildFile; fileRef = C328BB55227D40BC00C33BBF /* call_kit_record_btn_selected.json */; };
+		C328BB58227D41F600C33BBF /* call_kit_record_btn_normal.json in Resources */ = {isa = PBXBuildFile; fileRef = C328BB57227D41F600C33BBF /* call_kit_record_btn_normal.json */; };
+		C328BB78227D765600C33BBF /* CallKitKeypadDigitButtonViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328BB77227D765600C33BBF /* CallKitKeypadDigitButtonViewNode.swift */; };
 		C32C034E226563D40084F28E /* ASComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32C0344226563D40084F28E /* ASComponents.framework */; };
 		C32C0353226563D40084F28E /* ASComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C0352226563D40084F28E /* ASComponentsTests.swift */; };
 		C32C0355226563D40084F28E /* ASComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = C32C0347226563D40084F28E /* ASComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C32C03612265641E0084F28E /* ASProgressViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C03602265641E0084F28E /* ASProgressViewNode.swift */; };
 		C32C036A2265666F0084F28E /* SWKQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C03692265666F0084F28E /* SWKQueue.swift */; };
 		C32C036C226566B30084F28E /* ASSwitchNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C036B226566B30084F28E /* ASSwitchNode.swift */; };
-		C32C036E226566E60084F28E /* LottieAnimationViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C036D226566E60084F28E /* LottieAnimationViewNode.swift */; };
+		C32C036E226566E60084F28E /* ASLottieAnimationViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C036D226566E60084F28E /* ASLottieAnimationViewNode.swift */; };
 		C32C0370226569780084F28E /* ASDisplayNode2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C036F226569780084F28E /* ASDisplayNode2.swift */; };
 		C32C0372226569AD0084F28E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C0371226569AD0084F28E /* Globals.swift */; };
 		C32C037422656BF50084F28E /* ASCellNode2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C037322656BF50084F28E /* ASCellNode2.swift */; };
+		C3AB3DB9227ED240003BFDBB /* ASBarButtonItemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AB3DB8227ED240003BFDBB /* ASBarButtonItemNode.swift */; };
 		C3EA41C02265853D000D62D7 /* ASActivityIndicatorViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EA41BF2265853D000D62D7 /* ASActivityIndicatorViewNode.swift */; };
+		C3EA41E22268282C000D62D7 /* ASTransferButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EA41E12268282C000D62D7 /* ASTransferButtonNode.swift */; };
+		C3EA41E5226828A8000D62D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3EA41E4226828A8000D62D7 /* Assets.xcassets */; };
+		C3EA41E822682A21000D62D7 /* transfer_button_prepairing_day.json in Resources */ = {isa = PBXBuildFile; fileRef = C3EA41E622682A21000D62D7 /* transfer_button_prepairing_day.json */; };
+		C3EA41E922682A21000D62D7 /* transfer_button_transfering_day.json in Resources */ = {isa = PBXBuildFile; fileRef = C3EA41E722682A21000D62D7 /* transfer_button_transfering_day.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C328BB51227CE1C900C33BBF /* CallKitActionKeyButtonViewNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitActionKeyButtonViewNode.swift; sourceTree = "<group>"; };
+		C328BB53227D3A9C00C33BBF /* CallKitRecordButtonViewNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitRecordButtonViewNode.swift; sourceTree = "<group>"; };
+		C328BB55227D40BC00C33BBF /* call_kit_record_btn_selected.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call_kit_record_btn_selected.json; sourceTree = "<group>"; };
+		C328BB57227D41F600C33BBF /* call_kit_record_btn_normal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call_kit_record_btn_normal.json; sourceTree = "<group>"; };
+		C328BB77227D765600C33BBF /* CallKitKeypadDigitButtonViewNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitKeypadDigitButtonViewNode.swift; sourceTree = "<group>"; };
 		C32C0344226563D40084F28E /* ASComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32C0347226563D40084F28E /* ASComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASComponents.h; sourceTree = "<group>"; };
 		C32C0348226563D40084F28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,11 +55,16 @@
 		C32C03602265641E0084F28E /* ASProgressViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASProgressViewNode.swift; sourceTree = "<group>"; };
 		C32C03692265666F0084F28E /* SWKQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWKQueue.swift; sourceTree = "<group>"; };
 		C32C036B226566B30084F28E /* ASSwitchNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASSwitchNode.swift; sourceTree = "<group>"; };
-		C32C036D226566E60084F28E /* LottieAnimationViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieAnimationViewNode.swift; sourceTree = "<group>"; };
+		C32C036D226566E60084F28E /* ASLottieAnimationViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASLottieAnimationViewNode.swift; sourceTree = "<group>"; };
 		C32C036F226569780084F28E /* ASDisplayNode2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASDisplayNode2.swift; sourceTree = "<group>"; };
 		C32C0371226569AD0084F28E /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C32C037322656BF50084F28E /* ASCellNode2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASCellNode2.swift; sourceTree = "<group>"; };
+		C3AB3DB8227ED240003BFDBB /* ASBarButtonItemNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASBarButtonItemNode.swift; sourceTree = "<group>"; };
 		C3EA41BF2265853D000D62D7 /* ASActivityIndicatorViewNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASActivityIndicatorViewNode.swift; sourceTree = "<group>"; };
+		C3EA41E12268282C000D62D7 /* ASTransferButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTransferButtonNode.swift; sourceTree = "<group>"; };
+		C3EA41E4226828A8000D62D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3EA41E622682A21000D62D7 /* transfer_button_prepairing_day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transfer_button_prepairing_day.json; sourceTree = "<group>"; };
+		C3EA41E722682A21000D62D7 /* transfer_button_transfering_day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transfer_button_transfering_day.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +107,7 @@
 		C32C0346226563D40084F28E /* ASComponents */ = {
 			isa = PBXGroup;
 			children = (
+				C3EA41E022682813000D62D7 /* Complex */,
 				C32C03682265664D0084F28E /* Helper */,
 				C32C035F226563FE0084F28E /* Lottie */,
 				C32C035E226563F80084F28E /* UIKit */,
@@ -112,6 +133,7 @@
 				C32C036B226566B30084F28E /* ASSwitchNode.swift */,
 				C32C03602265641E0084F28E /* ASProgressViewNode.swift */,
 				C3EA41BF2265853D000D62D7 /* ASActivityIndicatorViewNode.swift */,
+				C3AB3DB8227ED240003BFDBB /* ASBarButtonItemNode.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -119,7 +141,7 @@
 		C32C035F226563FE0084F28E /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				C32C036D226566E60084F28E /* LottieAnimationViewNode.swift */,
+				C32C036D226566E60084F28E /* ASLottieAnimationViewNode.swift */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -132,6 +154,30 @@
 				C32C036F226569780084F28E /* ASDisplayNode2.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		C3EA41E022682813000D62D7 /* Complex */ = {
+			isa = PBXGroup;
+			children = (
+				C3EA41E32268288B000D62D7 /* LottieAssets */,
+				C3EA41E12268282C000D62D7 /* ASTransferButtonNode.swift */,
+				C3EA41E4226828A8000D62D7 /* Assets.xcassets */,
+				C328BB51227CE1C900C33BBF /* CallKitActionKeyButtonViewNode.swift */,
+				C328BB53227D3A9C00C33BBF /* CallKitRecordButtonViewNode.swift */,
+				C328BB77227D765600C33BBF /* CallKitKeypadDigitButtonViewNode.swift */,
+			);
+			path = Complex;
+			sourceTree = "<group>";
+		};
+		C3EA41E32268288B000D62D7 /* LottieAssets */ = {
+			isa = PBXGroup;
+			children = (
+				C328BB55227D40BC00C33BBF /* call_kit_record_btn_selected.json */,
+				C328BB57227D41F600C33BBF /* call_kit_record_btn_normal.json */,
+				C3EA41E622682A21000D62D7 /* transfer_button_prepairing_day.json */,
+				C3EA41E722682A21000D62D7 /* transfer_button_transfering_day.json */,
+			);
+			path = LottieAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +242,7 @@
 				TargetAttributes = {
 					C32C0343226563D40084F28E = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					C32C034C226563D40084F28E = {
 						CreatedOnToolsVersion = 10.2;
@@ -208,6 +255,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = C32C033A226563D40084F28E;
 			productRefGroup = C32C0345226563D40084F28E /* Products */;
@@ -225,6 +273,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C328BB58227D41F600C33BBF /* call_kit_record_btn_normal.json in Resources */,
+				C3EA41E822682A21000D62D7 /* transfer_button_prepairing_day.json in Resources */,
+				C3EA41E922682A21000D62D7 /* transfer_button_transfering_day.json in Resources */,
+				C3EA41E5226828A8000D62D7 /* Assets.xcassets in Resources */,
+				C328BB56227D40BC00C33BBF /* call_kit_record_btn_selected.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,12 +296,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C32C03612265641E0084F28E /* ASProgressViewNode.swift in Sources */,
+				C328BB52227CE1C900C33BBF /* CallKitActionKeyButtonViewNode.swift in Sources */,
+				C3EA41E22268282C000D62D7 /* ASTransferButtonNode.swift in Sources */,
 				C3EA41C02265853D000D62D7 /* ASActivityIndicatorViewNode.swift in Sources */,
 				C32C036A2265666F0084F28E /* SWKQueue.swift in Sources */,
 				C32C037422656BF50084F28E /* ASCellNode2.swift in Sources */,
 				C32C0372226569AD0084F28E /* Globals.swift in Sources */,
-				C32C036E226566E60084F28E /* LottieAnimationViewNode.swift in Sources */,
+				C32C036E226566E60084F28E /* ASLottieAnimationViewNode.swift in Sources */,
 				C32C0370226569780084F28E /* ASDisplayNode2.swift in Sources */,
+				C328BB78227D765600C33BBF /* CallKitKeypadDigitButtonViewNode.swift in Sources */,
+				C3AB3DB9227ED240003BFDBB /* ASBarButtonItemNode.swift in Sources */,
+				C328BB54227D3A9C00C33BBF /* CallKitRecordButtonViewNode.swift in Sources */,
 				C32C036C226566B30084F28E /* ASSwitchNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,10 +457,11 @@
 		C32C0359226563D40084F28E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2UWEQWNUAW;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -416,6 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mygix.ASComponents;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,10 +484,11 @@
 		C32C035A226563D40084F28E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2UWEQWNUAW;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
