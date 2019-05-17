@@ -10,6 +10,8 @@ import UIKit
 import AsyncDisplayKit
 
 public final class CallKitActionKeyButtonViewNode:ASDisplayNode {
+    public var type:String
+    
     public final class CallKitButtonIconContainerNode:ASDisplayNode {
         var isSelected:Bool = false {
             didSet{ self.updateImage() }
@@ -36,21 +38,28 @@ public final class CallKitActionKeyButtonViewNode:ASDisplayNode {
             
             self.imageNode.style.alignSelf = .center
             self.imageNode.image = iconImage
-            self.imageNode.forceUpscaling = true
-            self.imageNode.contentMode = .scaleAspectFit
+            //self.imageNode.forceUpscaling = true
+            self.imageNode.contentMode = .center
+            
             
             self.updateImage()
         }
         
         fileprivate func updateImage(){
-            self.imageNode.image = self.isEnabled ? (self.isSelected ? (self.iconImageSelected ?? self.iconImage) : self.iconImage) :  (self.iconImageDisabled ?? self.iconImage)
+            SWKQueue.mainQueue().async { [weak self] in
+                guard let strongSelf = self else { return }
+                let newImage = strongSelf.isEnabled ?
+                    (strongSelf.isSelected ? (strongSelf.iconImageSelected ?? strongSelf.iconImage) : strongSelf.iconImage)
+                    :  (strongSelf.iconImageDisabled ?? strongSelf.iconImage)
+                
+                strongSelf.imageNode.image = newImage
+            }
         }
         
         public override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-            let layout = ASStackLayoutSpec.vertical()
-            layout.alignContent = .center
-            layout.justifyContent = .center
-            layout.children = [self.imageNode]
+            let layout = ASRelativeLayoutSpec(horizontalPosition: ASRelativeLayoutSpecPosition.center, verticalPosition: ASRelativeLayoutSpecPosition.center, sizingOption: [], child: self.imageNode)
+            layout.style.preferredSize = constrainedSize.max
+            self.imageNode.style.preferredSize = CGSize(width: constrainedSize.max.width/2, height: constrainedSize.max.height/2)
             return layout
         }
         
@@ -76,18 +85,19 @@ public final class CallKitActionKeyButtonViewNode:ASDisplayNode {
     
     var titleAttributedStringSelected:NSAttributedString?
     var titleAttributedStringDisabled:NSAttributedString?
-    var titleAttributedString:NSAttributedString
+    var titleAttributedString:NSAttributedString?
     
     public init(_ iconImage:UIImage?,
                 _ iconImageSelected:UIImage?,
                 _ iconImageDisabled:UIImage?,
-                _ titleAttributedString:NSAttributedString,
+                _ titleAttributedString:NSAttributedString?,
                 _ titleAttributedStringSelected:NSAttributedString? = nil,
-                _ titleAttributedStringDisabled:NSAttributedString? = nil) {
+                _ titleAttributedStringDisabled:NSAttributedString? = nil, type:String = "default") {
         self.titleAttributedString = titleAttributedString
         self.titleAttributedStringSelected = titleAttributedStringSelected
         self.titleAttributedStringDisabled = titleAttributedStringDisabled
         self.iconContainerNode = CallKitButtonIconContainerNode(iconImage, iconImageSelected, iconImageDisabled)
+        self.type = type
         super.init()
         self.automaticallyManagesSubnodes = true
         self.labelNode.attributedText = titleAttributedString
@@ -102,18 +112,39 @@ public final class CallKitActionKeyButtonViewNode:ASDisplayNode {
                 _ iconImageDisabled:UIImage?,
                 _ titleAttributedString:NSAttributedString,
                 _ titleAttributedStringSelected:NSAttributedString? = nil,
-                _ titleAttributedStringDisabled:NSAttributedString? = nil ){
+                _ titleAttributedStringDisabled:NSAttributedString? = nil, type:String = "default" ){
         self.titleAttributedString = titleAttributedString
         self.titleAttributedStringSelected = titleAttributedStringSelected
         self.titleAttributedStringDisabled = titleAttributedStringDisabled
         
         self.iconContainerNode.setValues(iconImage, iconImageSelected, iconImageDisabled)
+        self.type = type
+        
+        self.updateBackgoundColor()
+        
         self.updateText()
+        
+        SWKQueue.mainQueue().async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.iconContainerNode.invalidateCalculatedLayout()
+        }
     }
     
     fileprivate func updateText(){
-        self.labelNode.attributedText = self.isEnabled ? ( self.isSelected ? (self.titleAttributedStringSelected ?? self.titleAttributedString) : self.titleAttributedString ) :
-            (self.titleAttributedStringDisabled ?? self.titleAttributedString )
+        SWKQueue.mainQueue().async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.labelNode.attributedText = strongSelf.isEnabled ? ( strongSelf.isSelected ? (strongSelf.titleAttributedStringSelected ?? strongSelf.titleAttributedString) : strongSelf.titleAttributedString ) :
+                (strongSelf.titleAttributedStringDisabled ?? strongSelf.titleAttributedString )
+        }
+        
+    }
+    
+    fileprivate func updateBackgoundColor(){
+        SWKQueue.mainQueue().async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.iconContainerNode.backgroundColor = strongSelf.isEnabled ?
+                (strongSelf.isSelected ? strongSelf.selectedBackgroundColor : strongSelf.normalBackgroundColor) : strongSelf.normalBackgroundColor
+        }
     }
     
     public override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
@@ -134,36 +165,32 @@ public final class CallKitActionKeyButtonViewNode:ASDisplayNode {
     
     public var isSelected:Bool = false {
         didSet {
+            if self.isSelected == oldValue { return }
             self.iconContainerNode.isSelected = self.isSelected
-            if self.isEnabled {
-                self.iconContainerNode.backgroundColor = self.iconContainerNode.isSelected ? self.selectedBackgroundColor : self.normalBackgroundColor
-            }
+            self.updateBackgoundColor()
             self.updateText()
         }
     }
     
     public var isEnabled:Bool =  true {
         didSet{
+            if self.isEnabled == oldValue { return }
             self.iconContainerNode.isEnabled = self.isEnabled
-            
-            /// if Disabled, setbackground color
-            if !self.isEnabled {
-                self.iconContainerNode.backgroundColor = self.normalBackgroundColor
-            }
+            self.updateBackgoundColor()
             self.updateText()
         }
     }
     
     private var m_isHighlighted:Bool = false {
         didSet{
+            if self.m_isHighlighted == oldValue { return }
+            if self.isSelected || !self.isEnabled { return }
             SWKQueue.mainQueue().async { [weak self] in
                 UIView.animate(withDuration: 0.3, animations: { [weak self] in
-                    if !(self?.isSelected ?? false) {
-                        if self?.m_isHighlighted ?? false {
-                            self?.iconContainerNode.backgroundColor = self?.highlightBackgroundColor
-                        }else{
-                            self?.iconContainerNode.backgroundColor = self?.normalBackgroundColor
-                        }
+                    if self?.m_isHighlighted ?? false {
+                        self?.iconContainerNode.backgroundColor = self?.highlightBackgroundColor
+                    }else{
+                        self?.iconContainerNode.backgroundColor = self?.normalBackgroundColor
                     }
                 })
             }
@@ -171,7 +198,6 @@ public final class CallKitActionKeyButtonViewNode:ASDisplayNode {
     }
     
     private func isInsideSelf(touches:Set<UITouch>, event:UIEvent?) -> Bool{
-        
         if let touch = touches.first {
             let location = touch.location(in: self.view)
             if self.bounds.contains(location) { return true }
