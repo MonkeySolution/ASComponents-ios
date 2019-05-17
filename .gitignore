@@ -1,4 +1,7 @@
 docs/_site/
 xcuserdata
-Carthage/*
-Carthage
+
+
+# Carthage
+Cartfile.resolved
+Carthage/
