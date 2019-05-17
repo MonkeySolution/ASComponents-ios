@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C328BB52227CE1C900C33BBF /* CallKitActionKeyButtonViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328BB51227CE1C900C33BBF /* CallKitActionKeyButtonViewNode.swift */; };
 		C328BB54227D3A9C00C33BBF /* CallKitRecordButtonViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328BB53227D3A9C00C33BBF /* CallKitRecordButtonViewNode.swift */; };
-		C328BB56227D40BC00C33BBF /* call_kit_record_btn_selected.json in Resources */ = {isa = PBXBuildFile; fileRef = C328BB55227D40BC00C33BBF /* call_kit_record_btn_selected.json */; };
-		C328BB58227D41F600C33BBF /* call_kit_record_btn_normal.json in Resources */ = {isa = PBXBuildFile; fileRef = C328BB57227D41F600C33BBF /* call_kit_record_btn_normal.json */; };
 		C328BB78227D765600C33BBF /* CallKitKeypadDigitButtonViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328BB77227D765600C33BBF /* CallKitKeypadDigitButtonViewNode.swift */; };
 		C32C034E226563D40084F28E /* ASComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32C0344226563D40084F28E /* ASComponents.framework */; };
 		C32C0353226563D40084F28E /* ASComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32C0352226563D40084F28E /* ASComponentsTests.swift */; };
@@ -43,8 +41,6 @@
 /* Begin PBXFileReference section */
 		C328BB51227CE1C900C33BBF /* CallKitActionKeyButtonViewNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitActionKeyButtonViewNode.swift; sourceTree = "<group>"; };
 		C328BB53227D3A9C00C33BBF /* CallKitRecordButtonViewNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitRecordButtonViewNode.swift; sourceTree = "<group>"; };
-		C328BB55227D40BC00C33BBF /* call_kit_record_btn_selected.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call_kit_record_btn_selected.json; sourceTree = "<group>"; };
-		C328BB57227D41F600C33BBF /* call_kit_record_btn_normal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call_kit_record_btn_normal.json; sourceTree = "<group>"; };
 		C328BB77227D765600C33BBF /* CallKitKeypadDigitButtonViewNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitKeypadDigitButtonViewNode.swift; sourceTree = "<group>"; };
 		C32C0344226563D40084F28E /* ASComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32C0347226563D40084F28E /* ASComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASComponents.h; sourceTree = "<group>"; };
@@ -182,8 +178,6 @@
 		C3EA41E32268288B000D62D7 /* LottieAssets */ = {
 			isa = PBXGroup;
 			children = (
-				C328BB55227D40BC00C33BBF /* call_kit_record_btn_selected.json */,
-				C328BB57227D41F600C33BBF /* call_kit_record_btn_normal.json */,
 				C3EA41E622682A21000D62D7 /* transfer_button_prepairing_day.json */,
 				C3EA41E722682A21000D62D7 /* transfer_button_transfering_day.json */,
 			);
@@ -283,11 +277,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C328BB58227D41F600C33BBF /* call_kit_record_btn_normal.json in Resources */,
 				C3EA41E822682A21000D62D7 /* transfer_button_prepairing_day.json in Resources */,
 				C3EA41E922682A21000D62D7 /* transfer_button_transfering_day.json in Resources */,
 				C3EA41E5226828A8000D62D7 /* Assets.xcassets in Resources */,
-				C328BB56227D40BC00C33BBF /* call_kit_record_btn_selected.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

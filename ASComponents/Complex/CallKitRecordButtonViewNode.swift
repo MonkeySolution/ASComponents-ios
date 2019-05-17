@@ -13,8 +13,8 @@ import Lottie
 
 open class CallKitRecordButtonViewNode:ASDisplayNode {
     let labelNode:ASTextNode2 = ASTextNode2()
-    let recordAnimationSelectedLottieViewNode:ASLottieAnimationViewNode = ASLottieAnimationViewNode(named: "call_kit_record_btn_selected", bundle: Bundle(for: ASTransferButtonNode.self))
-    let recordAnimationLottieViewNode:ASLottieAnimationViewNode = ASLottieAnimationViewNode(named: "call_kit_record_btn_normal", bundle: Bundle(for: ASTransferButtonNode.self))
+    let recordAnimationSelectedLottieViewNode:ASLottieAnimationViewNode// = ASLottieAnimationViewNode(named: "call_kit_record_btn_selected", bundle: Bundle(for: ASTransferButtonNode.self))
+    let recordAnimationLottieViewNode:ASLottieAnimationViewNode// = ASLottieAnimationViewNode(named: "call_kit_record_btn_normal", bundle: Bundle(for: ASTransferButtonNode.self))
     
     open var onTouchInInside:((_ sender:CallKitRecordButtonViewNode) -> ())?
     open var onTouchUpInside:((_ sender:CallKitRecordButtonViewNode) -> ())?
@@ -30,10 +30,15 @@ open class CallKitRecordButtonViewNode:ASDisplayNode {
     
     public init( _ titleAttributedString:NSAttributedString,
                  _ titleAttributedStringSelected:NSAttributedString? = nil,
-                 _ titleAttributedStringDisabled:NSAttributedString? = nil) {
+                 _ titleAttributedStringDisabled:NSAttributedString? = nil,
+                 normalLottieAnimFileName:String, normalLottieAnimBundle:Bundle,
+                 selectedLottieAnimFileName:String, selectedLottieAnimBundle:Bundle) {
         self.titleAttributedString = titleAttributedString
         self.titleAttributedStringSelected = titleAttributedStringSelected
         self.titleAttributedStringDisabled = titleAttributedStringDisabled
+        
+        self.recordAnimationSelectedLottieViewNode = ASLottieAnimationViewNode(named: selectedLottieAnimFileName, bundle: selectedLottieAnimBundle )
+        self.recordAnimationLottieViewNode = ASLottieAnimationViewNode(named: normalLottieAnimFileName, bundle: normalLottieAnimBundle )
         
         super.init()
         self.automaticallyManagesSubnodes = true
